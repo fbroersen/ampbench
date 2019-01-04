@@ -45,7 +45,7 @@ $( function() {
       return htmlResult
     },
     items: '.tooltip',
-    show: null, // show immediately
+    show: { delay: 1000, duration: 100 }, 
     open: function(event, ui)
     {
         if (typeof(event.originalEvent) === 'undefined')
@@ -145,12 +145,14 @@ function convertApp(app) {
 		console.log(renderAppConversionHtml(html, matches));
 		*/
 		var html = content ? '<p class="converted-content">' + content + '</p>' : '';
-			html += '<pre>' + renderAppConversionHtml(template, matches) + '</pre>';
+			html += '<pre id="highlight" class="language-html">' + renderAppConversionHtml(template, matches) + '</pre>';
 			// DEBUG
 			// html += '<p class="converted-match">Match found in: ' + url + '</p>';
+		// $('.converter').html(html);
 		$('.converter').html(html);
+		Prism.highlightElement(document.getElementById('highlight'));
 	} else {
-		alert('No matches found');
+		$('.converter').html('I was unable to find a template');
 	}
 }
 

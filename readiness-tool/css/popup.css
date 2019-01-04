@@ -179,14 +179,17 @@
 .converter p a:hover {
 	text-decoration: underline;
 }
-.converter pre {
-	background: #fff;
+.converter pre { /* Basic styles, code specific is in prism.css */
+	border: 1px solid #ccc;
+	font-size: 11px;
+	padding: 5px 10px;
+	/*background: #fff;
 	border: 1px solid #ccc;	
 	display: block;
 	font-size: 10px;
 	line-height: 15px;
 	margin: 5px 0 0;
-	padding: 5px 10px;
+	padding: 5px 10px;*/
 }
 
 .detected__app-convert {

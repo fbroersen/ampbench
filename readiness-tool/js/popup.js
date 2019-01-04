@@ -43,7 +43,7 @@ $( function() {
       return htmlResult
     },
     items: '.tooltip',
-    show: null, // show immediately
+    show: { duration: 100, delay: 1000 }, // delay 1 second, show immediately
     open: function(event, ui)
     {
         if (typeof(event.originalEvent) === 'undefined')
